@@ -1,5 +1,7 @@
-# phoenix-fc-vent-board
-Phoenix Flight Computer: vent board (#3)
+# phoenix-fc-board-b
+Phoenix Flight Computer: Bottom board (#3)
+
+Current valves on this board (readme will do full update later): LOX - F, LOX - P, LNG - V
 
 ## Last updated
 08/31/2026
