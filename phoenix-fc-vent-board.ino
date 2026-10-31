@@ -2,17 +2,17 @@
 #include "w5500.h"
 
 // W5500 pins
-constexpr uint8_t W5500_MISO = 32;
-constexpr uint8_t W5500_RST  = 26;
+constexpr uint8_t W5500_MISO = 19;
+constexpr uint8_t W5500_RST  = 27;
 constexpr uint8_t W5500_MOSI = 23;
 constexpr uint8_t W5500_SCK  = 18;
 constexpr uint8_t W5500_CS   = 5;
 
 // Four MOSFET-driver inputs
-constexpr uint8_t DRIVER_CH1_PIN = 13;
-constexpr uint8_t DRIVER_CH2_PIN = 33;
-constexpr uint8_t DRIVER_CH_PIN = 14;
-constexpr uint8_t DRIVER_CH4_PIN = 27;
+constexpr uint8_t DRIVER_CH1_PIN = 4;
+constexpr uint8_t DRIVER_CH2_PIN = 16;
+constexpr uint8_t DRIVER_CH3_PIN = 17;
+constexpr uint8_t DRIVER_CH4_PIN = 21;
 
 // Timing for solenoids
 constexpr unsigned long OPEN_MILLIS = 500;
@@ -32,7 +32,7 @@ static const uint8_t MAC_SENSOR_GIGA[6] = {0x02, 0x53, 0x49,
 
 static const uint8_t LNG_PRES_MASK = 0b1000000; // LNG Pressurant / Upstream
 static const uint8_t LOX_PRES_MASK = 0b0100000; // LOX Pressurant / Upstream
-static const uint8_t GN2_VENT_MASK = 0b0010000; // GN2 Vent, currently removed
+// static const uint8_t GN2_VENT_MASK = 0b0010000; // GN2 Vent, currently removed
 static const uint8_t LNG_FLOW_MASK = 0b0001000; // LNG Flow / Downstream
 static const uint8_t LNG_VENT_MASK = 0b0000100; // LNG Vent
 static const uint8_t LOX_FLOW_MASK = 0b0000010; // Lox Flow / Downstream
@@ -52,9 +52,9 @@ struct Valve {
 };
 
 Valve valves[] = {
-    {"GN2_VENT",    GN2_VENT_MASK,   DRIVER_CH1_PIN, false, 0},
-    {"LNG_VENT",    LNG_VENT_MASK,   DRIVER_CH2_PIN, false, 0},
-    {"LOX_VENT",    LOX_VENT_MASK,   DRIVER_CH3_PIN, false, 0},
+    //{"GN2_VENT",    GN2_VENT_MASK,   DRIVER_CH1_PIN, false, 0},
+    {"LNG_VENT",    LNG_VENT_MASK,   DRIVER_CH1_PIN, false, 0},
+    {"LOX_VENT",    LOX_VENT_MASK,   DRIVER_CH2_PIN, false, 0},
 };
 
 constexpr size_t NUM_VALVES = sizeof(valves) / sizeof(valves[0]);
