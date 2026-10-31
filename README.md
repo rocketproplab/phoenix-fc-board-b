@@ -1,10 +1,10 @@
 # phoenix-fc-board-b
 Phoenix Flight Computer: Bottom board (#3)
 
-Current valves on this board (readme will do full update later): LOX - F, LOX - P, LNG - V
+Current valves on this board (readme will do full update later): LOX - V, LNG - V
 
 ## Last updated
-08/31/2026
+10/31/2026
 
 ## ESP32 DevKit / ESP32-WROOM-32 — Ground-Station Actuator
 
